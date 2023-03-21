@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad til dyrene</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <section id="point">
+            <h2>Giv Dyrene noget mad</h2>
+            <p>Point: <span id="score">0</span></p>
+            <p class="text">Træk maden hen til dyrene</p>
+        </section>
+
+        <section id="animals">   
+            <div id="tiger" data-food="meat"><span class="animal">🐯</span><span class="mood">😋</span></div>
+            <div id="lion" data-food="meat"><span class="animal">🦁</span><span class="mood">😋</span></div>
+            <div id="monkey" data-food="fruit"><span class="animal">🐵</span><span class="mood">😋</span></div>
+            <div id="elephant" data-food="grass"><span class="animal">🐘</span><span class="mood">😋</span></div>
+        </section>
+
+        <section id="foods">
+            <h3>Mad</h3>
+            <div class="foodcontainer">
+                <div id="f-1" draggable="true" data-food="fruit"><span class="food">🍇</span></div>
+                <div id="f-2" draggable="true" data-food="fruit"><span class="food">🍏</span></div>
+                <div id="f-3" draggable="true" data-food="fruit"><span class="food">🍌</span></div>
+                <div id="f-4" draggable="true" data-food="grass"><span class="food">🌾</span></div>
+                <div id="f-5" draggable="true" data-food="meat"><span class="food">🥩</span></div>
+            </div>
+        </section>
+    </div>
+    <script src="/script.js"></script>
+</body>
+</html>
