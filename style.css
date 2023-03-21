@@ -8,13 +8,43 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: end;
+}
+
+#point .buy{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.point , button{
+    display: inline-block;
+    background-color: ivory;
+    border-radius: 5px;
+    border: none;
+    padding: .5rem;
+    color: goldenrod;
+    margin: 1rem 40%;
+}
+
+button{
+    display: none;
+    margin: 0;
+}
+
+h2, p, #point{
+    display: block;
+    color: ivory;
     text-align: center;
 }
 
 .wrapper{
     padding: 10% 6rem;
     height: 100vh;
-    background-color:rgb(230, 223, 212);
+    background-color: darkkhaki;
 }
 
 .text{
@@ -23,12 +53,12 @@ body{
 
 span{
     padding: .25em;
-    border-radius: 50%;
+    border-radius: 100%;
     background-color: white;
     box-shadow: 1px 1px 5px rgba(50 50 50 /0.5);
 }
 
-#animals, #foods .foodcontainer{
+#animals, .foodcontainer{
     margin: 2rem 0;
     display: flex;
     justify-content: center;
@@ -39,32 +69,28 @@ span{
 #animals div{
     display: grid;
     grid-template-columns: 1fr .5fr;
-    grid-template-rows: 1fr .5fr;
+    grid-template-rows: .5fr 1fr;
 }
 
 .animal{
     grid-column: 1/3;
     grid-row: 1/3;
 
-    font-size: xxx-large;
+    font-size: 3rem;
 }
 
 .mood{
     grid-column: 2/3;
-    grid-row: 2/3;
+    grid-row: 1/2;
 
-    font-size: large;
-}
-
-#foods .foodcontainer{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
+    font-size: 1.5rem;
+    background-color: blanchedalmond;
 }
 
 .food{
-    font-size: x-large;
+    font-size: 1.5rem;
+    height: 1.5rem;
+    padding: .35em .25em;
 }
 
 #score{
@@ -75,3 +101,31 @@ span{
     box-shadow: none;
 }
 
+.hura, .dead{
+    display: none;
+    position: fixed;
+
+    padding: 0.2em;
+    background-color: rgb(255 255 255 /0.5);
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px rgba(50 50 50 /0.5);
+    font-size: 50vh;
+}
+
+.character{
+    display: flex;
+
+    border: none;
+    padding: 0.2em 0.1em;
+    background-color: ivory;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px rgba(50 50 50 /0.5);
+    appearance: none;
+    font-size: 4rem;
+
+    position: fixed;
+    top: 1rem;
+    right: 2rem;
+
+    opacity: 0.5;
+}

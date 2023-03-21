@@ -1,5 +1,5 @@
 //DOM REFERENCER
-const pointBox = document.querySelector("#score"); //point tavle
+let pointBox = document.querySelector("#score"); //point tavle
 const dragFoodBox = document.querySelectorAll(".foodcontainer div");//mad
 const targetAnimal = document.querySelectorAll("#animals div");//dyrene
 const foodBox = document.querySelector(".foodcontainer");//madkassen
@@ -33,7 +33,7 @@ function dropMad(event) {
     let madId = event.dataTransfer.getData("foodId");
     let madType = event.dataTransfer.getData("foodName");
 
-    //let gammelemoji = this.querySelector(".mood");
+    let gammelemoji = this.querySelector(".mood");
     
     const sp1 = document.createElement("span");
     // Give it an class attribute called 'mood'
@@ -64,4 +64,31 @@ function dropMad(event) {
         pointBox.innerHTML = parseInt(pointBox.innerHTML) - 100;
         foodBox.removeChild(document.querySelector("#" + madId));
     }
+
+    if (pointBox.innerHTML == "1000") {
+        document.querySelector(".hura").style.display = "block";
+    }
+
+    if (pointBox.innerHTML == "-500") {
+        document.querySelector(".dead").style.display = "block";
+    }
+
+    if (pointBox.innerHTML >= "100") {
+        document.querySelector(".button-food").style.display = "inline";
+    }
+
+    if (pointBox.innerHTML >= "200") {
+        document.querySelector(".button-character").style.display = "inline";
+
+        document.querySelector(".button-character").addEventListener("click", function () {
+            var character = document.querySelector(".character");
+            character.style.opacity = "1";
+            character.disabled = false;
+            pointBox.innerHTML = parseInt(pointBox.innerHTML) - 200;
+            document.querySelector(".button-character").remove(".button-character");
+        })
+    } else {
+        document.querySelector(".button-character").style.display = "none";
+    }
 }
+
