@@ -3,6 +3,10 @@ let pointBox = document.querySelector("#score"); //point tavle
 const dragFoodBox = document.querySelectorAll(".foodcontainer div");//mad
 const targetAnimal = document.querySelectorAll("#animals div");//dyrene
 const foodBox = document.querySelector(".foodcontainer");//madkassen
+if (sessionStorage["Profile"] != null) {
+    document.querySelector(".character").selectedIndex = sessionStorage["Profile"];
+}
+
 
 //EVENTS på elementerne
 
@@ -26,6 +30,10 @@ function startDrag(event) {
 function cancelDefault(event) {
     event.preventDefault();
     //Kan bruges til at "aflyse" eventet
+}
+
+function SelectProfile() {
+    sessionStorage["Profile"] = document.querySelector(".character").selectedIndex;
 }
 
 function dropMad(event) {
@@ -67,24 +75,41 @@ function dropMad(event) {
 
     if (pointBox.innerHTML == "1000") {
         document.querySelector(".hura").style.display = "block";
+        document.querySelector(".tryAgain").style.display = "block"
     }
 
-    if (pointBox.innerHTML == "-500") {
+    if (foodBox.innerHTML.trim() == "") {
         document.querySelector(".dead").style.display = "block";
+        document.querySelector(".tryAgain").style.display = "block"
     }
 
-    if (pointBox.innerHTML >= "100") {
-        document.querySelector(".button-food").style.display = "inline";
+    // if (pointBox.innerHTML >= "100") {
+    //     document.querySelector(".button-food").style.display = "inline";
+    // }
+
+    if (pointBox.innerHTML < "0") {
+        document.querySelector(".button-like").style.display = "inline";
+
+        document.querySelector(".button-like").addEventListener("click", function (){
+            document.querySelectorAll(".like").forEach(function(e){
+                e.style.display = "block";
+            });
+        });
+    } else {
+        document.querySelector(".button-like").style.display = "none";
+        document.querySelectorAll(".like").forEach(function(e){
+            e.style.display = "none";
+        });
     }
 
-    if (pointBox.innerHTML >= "200") {
+    if (pointBox.innerHTML >= "500") {
         document.querySelector(".button-character").style.display = "inline";
 
         document.querySelector(".button-character").addEventListener("click", function () {
             var character = document.querySelector(".character");
             character.style.opacity = "1";
             character.disabled = false;
-            pointBox.innerHTML = parseInt(pointBox.innerHTML) - 200;
+            pointBox.innerHTML = parseInt(pointBox.innerHTML) - 500;
             document.querySelector(".button-character").remove(".button-character");
         })
     } else {

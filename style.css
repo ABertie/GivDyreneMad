@@ -68,8 +68,8 @@ span{
 
 #animals div{
     display: grid;
-    grid-template-columns: 1fr .5fr;
-    grid-template-rows: .5fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 
 .animal{
@@ -85,6 +85,19 @@ span{
 
     font-size: 1.5rem;
     background-color: blanchedalmond;
+}
+
+.like{
+    display: none;
+    grid-column: 1/2;
+    grid-row: 3/4;
+
+
+    font-size: 1.5rem;
+}
+
+.like:last-of-type{
+    grid-column: 2/3;
 }
 
 .food{
@@ -128,4 +141,11 @@ span{
     right: 2rem;
 
     opacity: 0.5;
+}
+
+.tryAgain{
+    position: fixed;
+    bottom: 1rem;
+    font-size: 10vh;
+    background-color: transparent;
 }

@@ -13,8 +13,9 @@
 <body>
     <div class="hura">🎉</div>
     <div class="dead">💀</div>
+    <button class="tryAgain" onclick="location.reload()">🔄</button>
     <div class="wrapper">
-        <select class="character" disabled>
+        <select class="character" disabled onchange="SelectProfile()">
             <option>👤</option>
             <option>👶</option>
             <option>👦</option>
@@ -49,27 +50,30 @@
             <p class="point"><span id="score">0</span> 🪙</p>
             <div class="buy">
                 <button class="button-character">Buy character</button>
-                <button class="button-food">Buy missing food</button>
+                <!-- <button class="button-food">Buy missing food</button> -->
+                <button class="button-like">Se hvad dyrene kan lide</button>
             </div>
         </section>
 
 
 
         <section id="animals">
-            <div id="tiger" data-food="meat"><span class="animal">🐯</span><span class="mood">🍴</span></div>
-            <div id="lion" data-food="meat"><span class="animal">🦁</span><span class="mood">🍴</span></div>
-            <div id="monkey" data-food="fruit"><span class="animal">🐵</span><span class="mood">🍴</span></div>
-            <div id="elephant" data-food="grass"><span class="animal">🐘</span><span class="mood">🍴</span></div>
+            <div id="tiger" data-food="meat"><span class="animal">🐯</span><span class="mood">🍴</span><span class="like">🥩</span><span class="like">🍗</span></div>
+            <div id="lion" data-food="meat"><span class="animal">🦁</span><span class="mood">🍴</span><span class="like">🥩</span><span class="like">🍗</span></div>
+            <div id="monkey" data-food="fruit"><span class="animal">🐵</span><span class="mood">🍴</span><span class="like">🍏</span><span class="like">🍌</span></div>
+            <div id="elephant" data-food="grass"><span class="animal">🐘</span><span class="mood">🍴</span><span class="like">🍇</span><span class="like">🌾</span></div>
         </section>
 
         <h2>Mad</h2>
 
         <section id="foods" class="foodcontainer">
-            <div id="f-1" draggable="true" data-food="fruit"><span class="food">🍇</span></div>
+            <div id="f-1" draggable="true" data-food="grass"><span class="food">🍇</span></div>
             <div id="f-2" draggable="true" data-food="fruit"><span class="food">🍏</span></div>
-            <div id="f-3" draggable="true" data-food="fruit"><span class="food">🍌</span></div>
-            <div id="f-4" draggable="true" data-food="grass"><span class="food">🌾</span></div>
-            <div id="f-5" draggable="true" data-food="meat"><span class="food">🥩</span></div>
+            <div id="f-3" draggable="true" data-food="meat"><span class="food">🍗</span></div>
+            <div id="f-4" draggable="true" data-food="fruit"><span class="food">🍌</span></div>
+            <div id="f-5" draggable="true" data-food="grass"><span class="food">🌾</span></div>
+            <div id="f-6" draggable="true" data-food="meat"><span class="food">🥩</span></div>
+            
         </section>
     </div>
     <script src="/script.js"></script>
