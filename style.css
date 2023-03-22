@@ -10,6 +10,7 @@ body{
     align-items: center;
     justify-content: center;
     text-align: end;
+    min-height: 100vh;
 }
 
 #point .buy{
@@ -42,8 +43,9 @@ h2, p, #point{
 }
 
 .wrapper{
-    padding: 10% 6rem;
-    height: 100vh;
+    padding: 3rem 6rem;
+    height: 100%;
+    max-width: 50rem;
     background-color: darkkhaki;
 }
 
@@ -64,6 +66,7 @@ span{
     justify-content: center;
     flex-direction: row;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 #animals div{
