@@ -41,13 +41,14 @@ function dropMad(event) {
     let madId = event.dataTransfer.getData("foodId");
     let madType = event.dataTransfer.getData("foodName");
 
+    let iLike = this.dataset.food;
     let gammelemoji = this.querySelector(".mood");
     
     const sp1 = document.createElement("span");
     // Give it an class attribute called 'mood'
     sp1.className = "mood";
 
-    if (madType == this.dataset.food) {
+    if ( iLike.includes(madType) ) {
         //let heart = document.createTextNode("🥰");
         //this.appendChild(heart);
         
