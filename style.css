@@ -71,8 +71,8 @@ span{
 
 #animals div{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 2fr;
 }
 
 .animal{
@@ -86,7 +86,7 @@ span{
     grid-column: 2/3;
     grid-row: 1/2;
 
-    font-size: 1.5rem;
+    font-size: 1rem;
     background-color: blanchedalmond;
 }
 
@@ -137,11 +137,11 @@ span{
     border-radius: 50%;
     box-shadow: 1px 1px 5px rgba(50 50 50 /0.5);
     appearance: none;
-    font-size: 4rem;
+    font-size: max(2rem, 8vw);
 
     position: fixed;
     top: 1rem;
-    right: 2rem;
+    right: 1rem;
 
     opacity: 0.5;
 }

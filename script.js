@@ -59,7 +59,12 @@ function dropMad(event) {
 
         //this.replaceChild(sp1, sp2);
         this.replaceChild(sp1, gammelemoji);
+        
+        // aninmation
+        let x = this.querySelector(".mood");
+        x.classList.add('animate__animated', 'animate__pulse');
 
+        // giv point
         pointBox.innerHTML = parseInt(pointBox.innerHTML) + 100;
     } else {
         // Create some content for the span.
@@ -70,6 +75,11 @@ function dropMad(event) {
         //this.replaceChild(sp1, sp2);
         this.replaceChild(sp1, gammelemoji);
 
+        // aninmation
+        let x = this.querySelector(".mood");
+        x.classList.add('animate__animated', 'animate__pulse');
+
+        //fjern point og maden
         pointBox.innerHTML = parseInt(pointBox.innerHTML) - 100;
         foodBox.removeChild(document.querySelector("#" + madId));
     }
