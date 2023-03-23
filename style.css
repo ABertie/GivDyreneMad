@@ -19,31 +19,41 @@ body{
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.5rem;
+    width: 100%;
 }
 
 .point , button{
     display: inline-block;
     background-color: ivory;
-    border-radius: 5px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgba(50 50 50 /0.5);
     border: none;
     padding: .5rem;
     color: goldenrod;
-    margin: 1rem 40%;
+    min-width: 6rem;
+}
+
+#point{
+    display: flex;
+    flex-wrap: wrap
+}
+
+#point h2{
+    width: 100%;
 }
 
 button{
     display: none;
-    margin: 0;
+    margin: 1rem 0 0;
 }
 
 h2, p, #point{
-    display: block;
     color: ivory;
     text-align: center;
 }
 
 .wrapper{
-    padding: 3rem 6rem;
+    padding: 3rem;
     height: 100%;
     max-width: 50rem;
     background-color: darkkhaki;

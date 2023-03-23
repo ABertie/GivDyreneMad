@@ -36,6 +36,8 @@ function SelectProfile() {
     sessionStorage["Profile"] = document.querySelector(".character").selectedIndex;
 }
 
+
+
 function dropMad(event) {
     //console.log("der er droppet mad");
     let madId = event.dataTransfer.getData("foodId");
@@ -47,6 +49,10 @@ function dropMad(event) {
     const sp1 = document.createElement("span");
     // Give it an class attribute called 'mood'
     sp1.className = "mood";
+        
+    let x = iLike.split(",");
+    console.log(x);
+
 
     if ( iLike.includes(madType) ) {
         //let heart = document.createTextNode("🥰");
@@ -61,9 +67,9 @@ function dropMad(event) {
         this.replaceChild(sp1, gammelemoji);
         
         // aninmation
-        let x = this.querySelector(".mood");
-        x.classList.add('animate__animated', 'animate__pulse');
-
+        let moodAnimate = this.querySelector(".mood");
+        moodAnimate.classList.add('animate__animated', 'animate__pulse');
+        
         // giv point
         pointBox.innerHTML = parseInt(pointBox.innerHTML) + 100;
     } else {
@@ -76,8 +82,8 @@ function dropMad(event) {
         this.replaceChild(sp1, gammelemoji);
 
         // aninmation
-        let x = this.querySelector(".mood");
-        x.classList.add('animate__animated', 'animate__pulse');
+        let moodAnimate = this.querySelector(".mood");
+        moodAnimate.classList.add('animate__animated', 'animate__pulse');
 
         //fjern point og maden
         pointBox.innerHTML = parseInt(pointBox.innerHTML) - 100;
@@ -128,3 +134,6 @@ function dropMad(event) {
     }
 }
 
+let arr = [1, 2, 3 , [4, 5], [6, 7]]
+
+console.log(arr.flat());
