@@ -36,6 +36,7 @@ p,
     border-radius: 50%;
     box-shadow: var(--shadow);
     font-size: 50vh;
+    z-index: 1;
 }
 
 .tryAgain {
