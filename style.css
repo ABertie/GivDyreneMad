@@ -1,14 +1,15 @@
-:root{
+:root {
     --shadow: 1px 1px 5px rgba(50 50 50 /0.5);
 }
 
-*{
+/* Generelt */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,119 +18,16 @@ body{
     min-height: 100vh;
 }
 
-#point .buy{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    width: 100%;
-}
-
-.point , button{
-    display: inline-block;
-    background-color: ivory;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-    border: none;
-    padding: .5rem;
-    color: goldenrod;
-    min-width: 6rem;
-}
-
-#point{
-    display: flex;
-    flex-wrap: wrap
-}
-
-#point h2{
-    width: 100%;
-}
-
-button{
-    display: none;
-    margin: 1rem 0 0;
-}
-
-h2, p, #point{
+h2,
+p,
+#point {
     color: ivory;
     text-align: center;
 }
 
-.wrapper{
-    padding: 3rem;
-    height: 100%;
-    
-    background-color: darkkhaki;
-}
-
-.text{
-    font-weight: 700;
-}
-
-span, .food{
-    padding: .25em;
-    border-radius: 100%;
-    background-color: white;
-    box-shadow: var(--shadow);
-}
-
-#animals, .foodcontainer{
-    margin: 2rem 0;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-#animals div{
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 2fr;
-}
-
-.animal{
-    grid-column: 1/3;
-    grid-row: 1/3;
-
-    font-size: 3rem;
-}
-
-.mood{
-    grid-column: 2/3;
-    grid-row: 1/2;
-
-    font-size: 1rem;
-    background-color: blanchedalmond;
-}
-
-.like{
-    display: none;
-    grid-column: 1/2;
-    grid-row: 3/4;
-
-
-    font-size: 1.5rem;
-}
-
-.like:last-of-type{
-    grid-column: 2/3;
-}
-
-.food{
-    font-size: 1.5rem;
-}
-
-#score{
-    font-size: medium;
-    padding: 0;
-    border-radius: 0;
-    background-color: inherit;
-    box-shadow: none;
-}
-
-.hura, .dead{
+/* Win or lose */
+.hura,
+.dead {
     display: none;
     position: fixed;
 
@@ -140,7 +38,15 @@ span, .food{
     font-size: 50vh;
 }
 
-.character{
+.tryAgain {
+    position: fixed;
+    bottom: 1rem;
+    font-size: 10vh;
+    background-color: transparent;
+}
+
+/* Character */
+.character {
     display: flex;
 
     border: none;
@@ -158,9 +64,100 @@ span, .food{
     opacity: 0.5;
 }
 
-.tryAgain{
-    position: fixed;
-    bottom: 1rem;
-    font-size: 10vh;
-    background-color: transparent;
+/* Wrapper */
+.wrapper {
+    padding: 3rem;
+    height: 100%;
+
+    background-color: darkkhaki;
+}
+
+/* Point og overskrift */
+#point {
+    display: flex;
+    flex-wrap: wrap
+}
+
+#score {
+    font-size: medium;
+    padding: 0;
+    border-radius: 0;
+    background-color: inherit;
+    box-shadow: none;
+}
+
+#point h2 {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+#point .buy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.point,
+button {
+    display: inline-block;
+    background-color: ivory;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    border: none;
+    padding: .5rem;
+    color: goldenrod;
+    min-width: 6rem;
+}
+
+button {
+    display: none;
+    margin: 1rem 0 0;
+}
+
+/* Animals */
+#animals div {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 2fr;
+}
+
+.animal {
+    grid-column: 1/3;
+    grid-row: 1/3;
+
+    font-size: 3rem;
+}
+
+.mood {
+    grid-column: 2/3;
+    grid-row: 1/2;
+
+    font-size: 1rem;
+    background-color: blanchedalmond;
+}
+
+#animals,
+.foodcontainer {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Food */
+span,
+.food {
+    padding: .25em;
+    border-radius: 100%;
+    background-color: white;
+    box-shadow: var(--shadow);
+}
+
+.food {
+    font-size: 1.5rem;
 }
