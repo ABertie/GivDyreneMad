@@ -44,6 +44,8 @@ p,
     bottom: 1rem;
     font-size: 10vh;
     background-color: transparent;
+    box-shadow: none;
+    z-index: 1;
 }
 
 /* Character */
