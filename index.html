@@ -27,9 +27,12 @@
             <option>👴</option>
             <option>👩</option>
             <option>👵</option>
-            <option>🧑‍🌾</option>
-            <option>🧑‍🍳</option>
-            <option>🧑‍💻</option>
+            <option>👨‍🌾</option>
+            <option>👩‍🌾</option>
+            <option>👨‍🍳</option>
+            <option>👩‍🍳</option>
+            <option>👨‍💻</option>
+            <option>👩‍💻</option>
             <option>🦸</option>
             <option>🦹</option>
             <option>🧙</option>
@@ -39,7 +42,6 @@
             <option>🧝</option>
             <option>🧞</option>
             <option>🧟</option>
-            <option>🧌</option>
             <option>👽</option>
             <option>🤖</option>
             <option>👻</option>
@@ -47,26 +49,29 @@
         </select>
 
         <section id="point">
-            <p class="point"><span id="score">0</span> 🪙</p>
+            <p class="point"><span id="score"></span> 🪙</p>
             <h2>Giv Dyrene noget mad</h2>
             <div class="buy">
                 <button class="button-character">Buy character</button>
-                <!-- <button class="button-food">Buy missing food</button> -->
+                <button class="button-food">Buy missing food</button>
             </div>
         </section>
-
+        
         <section id="animals">
             <div id="tiger" data-food="meat"><span class="animal">🐯</span><span class="mood">🍴</span></div>
             <div id="lion" data-food="meat"><span class="animal">🦁</span><span class="mood">🍴</span></div>
             <div id="monkey" data-food="fruit,salat"><span class="animal">🐵</span><span class="mood">🍴</span></div>
-            <div id="elephant" data-food="grass,fruit,salat"><span class="animal">🐘</span><span class="mood">🍴</span></div>
-            <div id="camel" data-food="grass,fruit,salat"><span class="animal">🐫</span><span class="mood">🍴</span></div>
+            <div id="elephant" data-food="grass,fruit,salat"><span class="animal">🐘</span><span class="mood">🍴</span>
+            </div>
+            <div id="camel" data-food="grass,fruit,salat"><span class="animal">🐫</span><span class="mood">🍴</span>
+            </div>
             <div id="whale" data-food="micro,Seafood"><span class="animal">🐋</span><span class="mood">🍴</span></div>
             <div id="turtle" data-food="fruit,salat"><span class="animal">🐢</span><span class="mood">🍴</span></div>
         </section>
-
+        
         <h2>Mad</h2>
-
+        
+        <section class="lostMad" id="lostMad"></section>
         <section id="foods" class="foodcontainer">
             <div id="branch" draggable="true" data-food="grass" class="food">🌿</div>
             <div id="grapes" draggable="true" data-food="fruit" class="food">🍇</div>

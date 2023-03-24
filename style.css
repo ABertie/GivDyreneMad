@@ -120,6 +120,23 @@ button {
     margin: 1rem 0 0;
 }
 
+/* lostFood */
+
+#animals,
+.foodcontainer,
+.lostMad {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.lostMad{
+    display: none;
+}
+
 /* Animals */
 #animals div {
     display: grid;
@@ -140,16 +157,6 @@ button {
 
     font-size: 1rem;
     background-color: blanchedalmond;
-}
-
-#animals,
-.foodcontainer {
-    margin: 2rem 0;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    gap: 1rem;
-    flex-wrap: wrap;
 }
 
 /* Food */
