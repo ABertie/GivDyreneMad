@@ -1,17 +1,21 @@
-//DOM REFERENCER
+// DOM REFERENCER
 let pointBox = document.querySelector("#score"); //point tavle
 var point = 0; //point in point tavlen
 const dragFoodBox = document.querySelectorAll(".foodcontainer div");//mad
 const targetAnimal = document.querySelectorAll("#animals div");//dyrene
 const foodBox = document.querySelector(".foodcontainer");//madkassen
-const lostFoodBox = document.querySelector(".lostMad") // section med classen lostMad
+const lostFoodBox = document.querySelector(".lostMad"); // section med classen lostMad
+const buyFoodButton = document.querySelector(".button-food");
+const CharacterButton = document.querySelector(".button-character");
+
+let MissingFood = document.querySelector(".food") // henter den første element med classen food (hvirker kun vis boxen maden er flyttet over i er placeret før foodBox)
+
+//Tjeker om der er blevet valgt en character og hvis der er, vises den.
 if (sessionStorage["Profile"] != null) {
     document.querySelector(".character").selectedIndex = sessionStorage["Profile"];
-} //Tjeker om der er blevet valgt en character og hvis der er vise den selvom siden er reloadet
-
+} 
 
 //EVENTS på elementerne
-
 dragFoodBox.forEach(function (element) {
     element.addEventListener("dragstart", startDrag);
 }) // Starter startDrag når maden bliver draget
@@ -106,41 +110,48 @@ function dropMad(event) {
                 e.style.display = "none";
             });
         } */
+        
+    ShowButtons();
+}
+
+CharacterButton.addEventListener("click", function () {
+    // Hvis knappen bliver trykket
+    const character = document.querySelector(".character"); // kalder elementet med classen = character -> character
+    character.style.opacity = "1"; // giver character en opacitiy på 1
+    character.disabled = false; // fjerner disabled på character
+    point = point - 500; //fjerner 500 point til point tælleren    
+    pointBox.innerHTML = point //sætter point ind i pointBox
+    CharacterButton.remove(".button-character"); // fjerne knappen
+})
+
+// Når knappen clickes    
+buyFoodButton.addEventListener("click", function () {
+    buyFoodButton.style.display = "none"; // fjerner knappen så man ikke kan se den
+    
+    // Find første manglende mad.
+    MissingFood = document.querySelector(".food");
+
+    foodBox.appendChild(MissingFood) // flytter den første fjerne mad tilbage til foodBox 
+    point = point - 100; //fjerner 100 point til point tælleren
+
+    ShowButtons();
+});
+
+function ShowButtons() {
+    if (lostFoodBox.innerHTML.trim() != "") {
+        if (point >= "100") {
+            // hvis der er noget i lostFoodBox og point er minst 100 point:            
+            buyFoodButton.style.display = "inline"; // Viser knappen
+        };
+    };
 
     if (point >= "500") {
         // hvis man har 500 point eller mere
         const CharacterButton = document.querySelector(".button-character");
-
         CharacterButton.style.display = "inline"; // viser knappen med classen = Button-character
-
-        CharacterButton.addEventListener("click", function () {
-            // Hvis knappen bliver trykket
-            const character = document.querySelector(".character"); // kalder elementet med classen = character -> character
-            character.style.opacity = "1"; // giver character en opacitiy på 1
-            character.disabled = false; // fjerner disabled på character
-            point = point - 500; //fjerner 500 point til point tælleren
-            pointBox.innerHTML = point //sætter point ind i pointBox
-            CharacterButton.remove(".button-character"); // fjerne knappen
-        })
     }
 
-    if (lostFoodBox.innerHTML.trim() != "") {
-        if (point >= "100") {
-            // hvis der er noget i lostFoodBox og point er minst 100 point:
-            const foodButton = document.querySelector(".button-food") // kalder på knappen med classen button-food
-            foodButton.style.display = "inline"; // Viser knappen
-            clickFoodBox = document.querySelector(".food") // henter den første element med classen food (hvirker kun vis boxen maden er flyttet over i er placeret før foodBox)
-
-            foodButton.addEventListener("click", function () {
-                // Når knappen clickes
-                foodButton.style.display = "none"; // fjerner knappen så man ikke kan se den
-                foodBox.appendChild(clickFoodBox) // flytter den første fjerne mad tilbage til foodBox 
-                point = point - 100; //fjerner 100 point til point tælleren
-                pointBox.innerHTML = point //sætter point ind i pointBox
-            });
-        };
-    };
     pointBox.innerHTML = point //sætter point ind i pointBox
 }
-pointBox.innerHTML = point //sætter point ind i pointBox
 
+pointBox.innerHTML = point //sætter point ind i pointBox
